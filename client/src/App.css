@@ -1,11 +1,18 @@
-.a4-page {
-  width: 210mm;
-  min-height: 297mm;
-  padding: 2cm;
-  border: 5px black solid;
-  border-radius: 5px;
-  background: white;
-  zoom: 0.4;
+body{
+  background-color: #B227E3!important;
+}
+.homepage{
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-homepage{
+  text-align: center;
+  width: auto;
 }
 .App{
   overflow: auto;
