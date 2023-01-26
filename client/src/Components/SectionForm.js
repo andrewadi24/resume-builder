@@ -15,17 +15,11 @@ const SectionForm = (props) => {
             {
                 degree_name: "bachelor of science",
                 school: "University of Sydney",
+                startDate: "02 February 2018",
+                endDate: "Present",
+                
             }
         )
-        // const education_details = props.details.education.map(detail => {
-
-        //     return (<>
-        //         {detail.degree_name}
-        //         {detail.school}
-        //     </>)
-
-        // })
-        // new_detail.educationElement = education_details
         setDetails(new_detail)
         setcount(count => count + 1)
     }

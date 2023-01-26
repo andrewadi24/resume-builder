@@ -15,12 +15,19 @@ const Result = (props) => {
             // flexDirection: 'row',
             backgroundColor: '#E4E4E4'
         },
+        summary:{
+            borderBottom: "3px solid grey",
+            paddingBottom: "10px",
+            marginLeft: 20,
+            marginRight: 20,
+            marginTop: 10,
+        },
         section: {
             borderBottom: "3px solid grey",
             paddingBottom: "10px",
-            marginLeft: 30,
-            marginRight: 30,
-            marginTop: 30,
+            marginLeft: 20,
+            marginRight: 20,
+            marginTop: 20,
         },
         row: {
             flex: 1,
@@ -46,19 +53,20 @@ const Result = (props) => {
         }
     });
     let details = props.details
-    console.log(props.details.education)
     const education_details = props.details.education.map(detail => {
 
         return (<>
-            {detail.degree_name}
-            {detail.school}
+            <View style={{ marginTop: "10px" }}>
+                <Text style={{ fontSize: "15px" }}>{detail.degree_name}, {detail.school}</Text>
+                <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}</Text>
+            </View>
         </>)
 
     })
 
     return (
         <>
-            
+
             <PDFViewer>
                 <Document style={styles.document}>
                     <Page size="A4" style={styles.page}>
@@ -70,20 +78,27 @@ const Result = (props) => {
                         </View>
                         <View style={styles.row}>
                             <View style={styles.left}>
-                                <View style={styles.section}>
-              
-                                    <Text style={{ fontSize: "15px", marginBottom: "10px" }}>Professional Summary</Text>
+                                <View style={styles.summary}>
+                                    <Text style={{ fontSize: "20px", marginBottom: "10px" }}>Professional Summary</Text>
                                     <Text style={{ fontSize: "10px", }}>{details.summary}</Text>
                                 </View>
                                 <View style={styles.section}>
-                                    <Text style={{ fontSize: "15px", marginBottom: "10px" }}>Education</Text>
-                                    <Text style={{ fontSize: "10px", }}>{education_details}</Text>
+                                    <Text style={{ fontSize: "20px" }}>Education</Text>
+                                    {education_details}
+                                </View>
+                                <View style={styles.section}>
+                                    <Text style={{ fontSize: "20px" }}>Experience</Text>
+                                    {education_details}
+                                </View>
+                                <View style={styles.section}>
+                                    <Text style={{ fontSize: "20px" }}>Projects</Text>
                                 </View>
                             </View>
 
                             <View style={styles.right}>
                                 <Text style={{ fontSize: "15px" }}>Personal Details</Text>
-
+                                <Text style={{ fontSize: "15px" }}>Skills</Text>
+                                <Text style={{ fontSize: "15px" }}>Languages</Text>
                             </View>
                         </View>
 

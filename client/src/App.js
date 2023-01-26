@@ -15,8 +15,8 @@ let detail = {
   first_name: "",
   last_name: "",
   email: "",
-  summary:"",
-  education :[],
+  summary: "",
+  education: [],
   educationElement: {}
 }
 let testing = {
@@ -25,9 +25,31 @@ let testing = {
   last_name: "Smith",
   email: "johnsmith@gmail.com",
   phone: "+61 0422 264 891",
-  summary:"Self-motivated and cheerful customer service professional with 2+ years of experience helping customers navigate websites and resolving product and service issues. Eager to support BookMe in building an impeccable online reputation by providing top-class customer support.",
-  education: [],
-  educationElement : {}
+  summary: "Self-motivated and cheerful customer service professional with 2+ years of experience helping customers navigate websites and resolving product and service issues. Eager to support BookMe in building an impeccable online reputation by providing top-class customer support.",
+  education: [
+    {
+      degree_name: "bachelor of science",
+      school: "University of Sydney",
+      startDate: "02 February 2018",
+      endDate: "Present",
+
+    },
+    {
+      degree_name: "bachelor of science",
+      school: "University of Sydney",
+      startDate: "02 February 2018",
+      endDate: "Present",
+
+    },
+    {
+      degree_name: "bachelor of science",
+      school: "University of Sydney",
+      startDate: "02 February 2018",
+      endDate: "Present",
+      
+  }
+  ],
+  educationElement: {}
 }
 function App() {
   const [details, setdetails] = useState(detail)
@@ -37,11 +59,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home></Home>}>
           </Route>
-          <Route path="templates" element={<Builder/>} />
-          <Route path="personal_details" element={<PersonalDetails details = {details} setdetails = {setdetails}/>} />
-          <Route path="summary" element={<Summary details = {details} setdetails = {setdetails}/>} />
-          <Route path="education" element={<Education details = {details} setdetails = {setdetails}/>} />
-          <Route path="result" element={<Result details={details}/>} />
+          <Route path="templates" element={<Builder />} />
+          <Route path="personal_details" element={<PersonalDetails details={details} setdetails={setdetails} />} />
+          <Route path="summary" element={<Summary details={details} setdetails={setdetails} />} />
+          <Route path="education" element={<Education details={details} setdetails={setdetails} />} />
+          <Route path="result" element={<Result details={testing} />} />
         </Routes>
       </BrowserRouter>
     </div>
