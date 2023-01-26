@@ -15,6 +15,10 @@ const Result = (props) => {
             // flexDirection: 'row',
             backgroundColor: '#E4E4E4'
         },
+        section_title:{
+            marginBottom:"5px",
+            fontSize: "20px"
+        },
         summary:{
             borderBottom: "3px solid grey",
             paddingBottom: "10px",
@@ -56,7 +60,7 @@ const Result = (props) => {
     const education_details = props.details.education.map(detail => {
 
         return (<>
-            <View style={{ marginTop: "10px" }}>
+            <View style={{ marginBottom:"5px" }}>
                 <Text style={{ fontSize: "15px" }}>{detail.degree_name}, {detail.school}</Text>
                 <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}</Text>
             </View>
@@ -79,19 +83,19 @@ const Result = (props) => {
                         <View style={styles.row}>
                             <View style={styles.left}>
                                 <View style={styles.summary}>
-                                    <Text style={{ fontSize: "20px", marginBottom: "10px" }}>Professional Summary</Text>
+                                    <Text style={{ fontSize: "20px", marginBottom: "5px" }}>Professional Summary</Text>
                                     <Text style={{ fontSize: "10px", }}>{details.summary}</Text>
                                 </View>
                                 <View style={styles.section}>
-                                    <Text style={{ fontSize: "20px" }}>Education</Text>
+                                    <Text style={styles.section_title}>Education</Text>
                                     {education_details}
                                 </View>
                                 <View style={styles.section}>
-                                    <Text style={{ fontSize: "20px" }}>Experience</Text>
+                                    <Text style={styles.section_title}>Experience</Text>
                                     {education_details}
                                 </View>
                                 <View style={styles.section}>
-                                    <Text style={{ fontSize: "20px" }}>Projects</Text>
+                                    <Text style={styles.section_title}>Projects</Text>
                                 </View>
                             </View>
 
