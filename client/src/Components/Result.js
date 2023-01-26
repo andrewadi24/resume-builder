@@ -92,7 +92,6 @@ const Result = (props) => {
                                 </View>
                                 <View style={styles.section}>
                                     <Text style={styles.section_title}>Experience</Text>
-                                    {education_details}
                                 </View>
                                 <View style={styles.section}>
                                     <Text style={styles.section_title}>Projects</Text>
@@ -102,6 +101,7 @@ const Result = (props) => {
                             <View style={styles.right}>
                                 <View>
                                     <Text style={{ fontSize: "15px" }}>Personal Details</Text>
+                                    <Text style={{ fontSize: "15px" }}>{details.phone}</Text>
                                 </View>
                                 <Text style={{ fontSize: "15px" }}>Skills</Text>
                                 <Text style={{ fontSize: "15px" }}>Languages</Text>

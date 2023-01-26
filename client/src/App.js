@@ -63,7 +63,7 @@ function App() {
           <Route path="personal_details" element={<PersonalDetails details={details} setdetails={setdetails} />} />
           <Route path="summary" element={<Summary details={details} setdetails={setdetails} />} />
           <Route path="education" element={<Education details={details} setdetails={setdetails} />} />
-          <Route path="result" element={<Result details={testing} />} />
+          <Route path="result" element={<Result details={details} />} />
         </Routes>
       </BrowserRouter>
     </div>

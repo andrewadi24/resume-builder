@@ -4,10 +4,14 @@ import SectionSubForm from './SectionSubForm';
 
 const SectionForm = (props) => {
     const details = props.details
-    const setDetails = props.setdetails
+    const setDetails = props.setDetails
     const title = props.title
     
-    const [count, setcount] = useState(0)
+    if (props.title == "education") {
+
+    }
+    
+    const [count, setcount] = useState(details.education.length)
     
     let l = []
     for (let i = 0; i < details.education.length; i++) {
@@ -19,15 +23,15 @@ const SectionForm = (props) => {
         let new_detail = { ...details }
         new_detail.education.push(
             {
-                degree_name: "bachelor of science",
-                school: "University of Sydney",
-                startDate: "02 February 2018",
-                endDate: "Present",
+                degree_name: "",
+                school: "",
+                startDate: "",
+                endDate: "",
 
             }
         )
         setDetails(new_detail)
-        setListElem(listElem.concat(<SectionSubForm title="education" id={count} details={props.details} setDetails={props.setDetails}></SectionSubForm>));
+        setListElem(listElem.concat(<SectionSubForm title="education" id={count} details={details} setDetails={setDetails}></SectionSubForm>));
         setcount(count => count + 1)
     }
     return (
