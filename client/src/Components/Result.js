@@ -15,11 +15,11 @@ const Result = (props) => {
             // flexDirection: 'row',
             backgroundColor: '#E4E4E4'
         },
-        section_title:{
-            marginBottom:"5px",
+        section_title: {
+            marginBottom: "5px",
             fontSize: "20px"
         },
-        summary:{
+        summary: {
             borderBottom: "3px solid grey",
             paddingBottom: "10px",
             marginLeft: 20,
@@ -60,7 +60,7 @@ const Result = (props) => {
     const education_details = props.details.education.map(detail => {
 
         return (<>
-            <View style={{ marginBottom:"5px" }}>
+            <View style={{ marginBottom: "5px" }}>
                 <Text style={{ fontSize: "15px" }}>{detail.degree_name}, {detail.school}</Text>
                 <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}</Text>
             </View>
@@ -100,7 +100,9 @@ const Result = (props) => {
                             </View>
 
                             <View style={styles.right}>
-                                <Text style={{ fontSize: "15px" }}>Personal Details</Text>
+                                <View>
+                                    <Text style={{ fontSize: "15px" }}>Personal Details</Text>
+                                </View>
                                 <Text style={{ fontSize: "15px" }}>Skills</Text>
                                 <Text style={{ fontSize: "15px" }}>Languages</Text>
                             </View>

@@ -5,11 +5,17 @@ import SectionSubForm from './SectionSubForm';
 const SectionForm = (props) => {
     const details = props.details
     const setDetails = props.setdetails
+    const title = props.title
+    
     const [count, setcount] = useState(0)
-    const [listElem, setListElem] = React.useState([]);
+    
+    let l = []
+    for (let i = 0; i < details.education.length; i++) {
+        l.push(<SectionSubForm title="education" id={i} details={props.details} setDetails={props.setDetails}></SectionSubForm>)
+    }
+    const [listElem, setListElem] = React.useState(l);
     let word = props.title
     function clickHandler(e) {
-        setListElem(listElem.concat(<SectionSubForm title="education" id={count} details={props.details} setDetails={props.setDetails}></SectionSubForm>));
         let new_detail = { ...details }
         new_detail.education.push(
             {
@@ -17,10 +23,11 @@ const SectionForm = (props) => {
                 school: "University of Sydney",
                 startDate: "02 February 2018",
                 endDate: "Present",
-                
+
             }
         )
         setDetails(new_detail)
+        setListElem(listElem.concat(<SectionSubForm title="education" id={count} details={props.details} setDetails={props.setDetails}></SectionSubForm>));
         setcount(count => count + 1)
     }
     return (
