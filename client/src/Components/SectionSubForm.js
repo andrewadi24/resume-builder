@@ -1,10 +1,16 @@
 import React from 'react'
 
-const SectionSubForm = () => {
+const SectionSubForm = (props) => {
     let column1 = "Job Title"
     let column2 = "Employer"
+    if (props.title =="education"){
+        column1 = "Degree Name"
+        column2 = "School"
+    }
+    const details = props.details;
+    
     return (
-        <div className='container border rounded pt-3 pb-3 bg-white'>
+        <div className='container mt-3 border rounded pt-3 pb-3 bg-white'>
             <div className='row'>
                 <div className='col-6'>
                     <div className="form-group">

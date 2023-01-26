@@ -1,24 +1,36 @@
-import React, { useEffect } from 'react'
-import { useDetails } from './DetailsContext'
-const PersonalDetails = () => {
-    const details= useDetails();
-    useEffect(() => {
-      console.log(details)
-    
-      return () => {
-        
-      }
-    }, [details])
-    
+import React from 'react'
+import { Link } from 'react-router-dom'
+const Form = (props) => {
+    const details = props.details
+    const setDetails = props.setdetails
+    function changeJobTitle(e) {
+        let new_detail = {...details}
+        new_detail.job_title = e.target.value
+        setDetails(new_detail)
+    }
+    function changeFirstName(e) {
+        let new_detail = {...details}
+        new_detail.first_name = e.target.value
+        setDetails(new_detail)
+    }
+    function changeLastName(e) {
+        let new_detail = {...details}
+        new_detail.last_name = e.target.value
+        setDetails(new_detail)
+    }
+    function changeEmail(e) {
+        let new_detail = {...details}
+        new_detail.email = e.target.value
+        setDetails(new_detail)
+    }
     return (
-        <div className='container'>
+        <div className='container bg-light rounded'>
             <h2>Personal Details</h2>
-            
             <div className="row">
                 <div className='col-12'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Wanted job title:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange=""/>
+                        <input type="text" value = {details.job_title}class="form-control" placeholder="Enter Role" onChange={changeJobTitle} />
                     </div>
                 </div>
             </div>
@@ -27,13 +39,13 @@ const PersonalDetails = () => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">First Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="text" value = {details.first_name}class="form-control" placeholder="Enter First Name" onChange={changeFirstName} />
                     </div>
                 </div>
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Last Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="text" value = {details.last_name}class="form-control" placeholder="Enter Last Name" onChange={changeLastName} />
                     </div>
                 </div>
             </div>
@@ -41,7 +53,7 @@ const PersonalDetails = () => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="email" value = {details.email}class="form-control"  placeholder="Enter email" onChange={changeEmail}/>
                     </div>
                 </div>
                 <div className='col-6'>
@@ -66,22 +78,13 @@ const PersonalDetails = () => {
                     </div>
                 </div>
             </div>
-
-
-
-            <div className='row'>
-                <h2>Professional Summary</h2>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Write 2-3 sentences about yourself.</label>
-                    <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows=""></textarea>
-                </div>
+            <div className='d-flex justify-content-between mt-2 mb-2'>
+                <Link to="/"><div className='btn btn-danger btn-large'>Previous</div></Link>
+                <Link to="/summary"><div className='btn btn-primary btn-large'> Next</div></Link>
             </div>
 
-
-
-            {/* End container */}
         </div>
     )
 }
 
-export default PersonalDetails
+export default Form

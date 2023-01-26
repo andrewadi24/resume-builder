@@ -1,31 +1,20 @@
-import React from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import SectionForm from './SectionForm'
+import SectionSubForm from './SectionSubForm'
+const Education = (props) => {
+    const details = props.details
+    const setDetails = props.setdetails
+    return (
+        <div className='container bg-light rounded'>
+            <h2>Education</h2>
+            <SectionForm title = "education" details = {details} setdetails = {setDetails}></SectionForm>
+            <div className='d-flex justify-content-between mt-2 mb-2'>
+                <Link to="/personal_details"><div className='btn btn-danger btn-large'>Previous</div></Link>
+                <Link to="/result"><div className='btn btn-primary btn-large'> Next</div></Link>
+            </div>
+        </div>
+    )
+}
 
-import Title from './Title';
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 10,
-  },
-  school: {
-    fontFamily: 'Lato Bold',
-    fontSize: 10,
-  },
-  degree: {
-    fontFamily: 'Lato',
-    fontSize: 10,
-  },
-  candidate: {
-    fontFamily: 'Lato Italic',
-    fontSize: 10,
-  },
-});
-
-export default () => (
-  <View style={styles.container}>
-    <Title>Education</Title>
-    <Text style={styles.school}>Jedi Academy</Text>
-    <Text style={styles.degree}>Jedi Master</Text>
-    <Text style={styles.candidate}>A long, long time ago</Text>
-  </View>
-);
+export default Education
