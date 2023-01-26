@@ -71,6 +71,7 @@ const Result = (props) => {
                         <View style={styles.row}>
                             <View style={styles.left}>
                                 <View style={styles.section}>
+              
                                     <Text style={{ fontSize: "15px", marginBottom: "10px" }}>Professional Summary</Text>
                                     <Text style={{ fontSize: "10px", }}>{details.summary}</Text>
                                 </View>
