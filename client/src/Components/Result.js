@@ -101,7 +101,8 @@ const Result = (props) => {
                             <View style={styles.right}>
                                 <View>
                                     <Text style={{ fontSize: "15px" }}>Personal Details</Text>
-                                    <Text style={{ fontSize: "15px" }}>{details.phone}</Text>
+                                    <Text style={{ fontSize: "10px" }}>{details.phone}</Text>
+                                    <Text style={{ fontSize: "10px" }}>{details.country}, {details.city}</Text>
                                 </View>
                                 <Text style={{ fontSize: "15px" }}>Skills</Text>
                                 <Text style={{ fontSize: "15px" }}>Languages</Text>

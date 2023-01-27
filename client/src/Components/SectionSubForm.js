@@ -10,6 +10,7 @@ const SectionSubForm = (props) => {
     let column2 = "Employer"
     let first_input;
     if (props.title == "experience") {
+        console.log(id)
         first_input = details.experience[id].job_title
     }
     if (props.title == "education") {

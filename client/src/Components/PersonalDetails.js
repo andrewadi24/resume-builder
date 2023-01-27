@@ -23,6 +23,21 @@ const Form = (props) => {
         new_detail.email = e.target.value
         setDetails(new_detail)
     }
+    function changePhone(e) {
+        let new_detail = {...details}
+        new_detail.phone = e.target.value
+        setDetails(new_detail)
+    }
+    function changeCountry(e) {
+        let new_detail = {...details}
+        new_detail.country = e.target.value
+        setDetails(new_detail)
+    }
+    function changeCity(e) {
+        let new_detail = {...details}
+        new_detail.city = e.target.value
+        setDetails(new_detail)
+    }
     return (
         <div className='container bg-light rounded'>
             <h2>Personal Details</h2>
@@ -59,7 +74,7 @@ const Form = (props) => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Phone</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="text" class="form-control"  placeholder="Enter Phone" value = {details.phone}onChange={changePhone}/>
                     </div>
                 </div>
             </div>
@@ -68,13 +83,13 @@ const Form = (props) => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Country</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="text" class="form-control" value = {details.country}placeholder="Enter Country" onChange={changeCountry}/>
                     </div>
                 </div>
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">City</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input type="text" class="form-control" placeholder="Enter City" value = {details.city} onChange={changeCity}/>
                     </div>
                 </div>
             </div>

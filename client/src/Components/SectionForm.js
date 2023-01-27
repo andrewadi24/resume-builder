@@ -50,7 +50,7 @@ const SectionForm = (props) => {
             }
         )
         setDetails(new_detail)
-        setExperienceElement([...experienceElement, <SectionSubForm title="experience" id={educationCount} details={details} setDetails={setDetails}></SectionSubForm> ]);
+        setExperienceElement([...experienceElement, <SectionSubForm title="experience" id={experienceCount} details={details} setDetails={setDetails}></SectionSubForm> ]);
         setExperienceCount(experienceCount => experienceCount + 1)
     }
 
