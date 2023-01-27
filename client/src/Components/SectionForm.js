@@ -6,19 +6,22 @@ const SectionForm = (props) => {
     const details = props.details
     const setDetails = props.setDetails
     const title = props.title
-    
-    if (props.title == "education") {
 
-    }
-    
-    const [count, setcount] = useState(details.education.length)
-    
     let l = []
-    for (let i = 0; i < details.education.length; i++) {
-        l.push(<SectionSubForm title="education" id={i} details={props.details} setDetails={props.setDetails}></SectionSubForm>)
+    if (title === "education") {
+        for (let i = 0; i < details.education.length; i++) {
+            l.push(<SectionSubForm title="education" id={i} details={props.details} setDetails={props.setDetails}></SectionSubForm>)
+        }
     }
-    const [listElem, setListElem] = React.useState(l);
+    if (title === "experience") {
+        for (let i = 0; i < details.experience.length; i++) {
+            l.push(<SectionSubForm title="experience" id={i} details={props.details} setDetails={props.setDetails}></SectionSubForm>)
+        }
+    }
     let word = props.title
+
+    const [educationCount, setEducationCount] = useState(details.education.length)
+    const [educationElem, setEducationElem] = React.useState(l);
     function clickHandler(e) {
         let new_detail = { ...details }
         new_detail.education.push(
@@ -31,16 +34,43 @@ const SectionForm = (props) => {
             }
         )
         setDetails(new_detail)
-        setListElem(listElem.concat(<SectionSubForm title="education" id={count} details={details} setDetails={setDetails}></SectionSubForm>));
-        setcount(count => count + 1)
+        setEducationElem([...educationElem, <SectionSubForm title="education" id={educationCount} details={details} setDetails={setDetails}></SectionSubForm> ]);
+        setEducationCount(educationCount => educationCount + 1)
     }
-    return (
-        <>
-            {listElem}
-            <div className='border pt-2 pb-2 rounded mt-3 bg-white' onClick={clickHandler}>+ Add new {word}</div>
-        </>
+    const [experienceCount, setExperienceCount] = useState(details.experience.length)
+    const [experienceElement, setExperienceElement] = React.useState(l);
+    function experienceHandler(e) {
+        let new_detail = { ...details }
+        new_detail.experience.push(
+            {
+                job_title: "",
+                employer: "",
+                startDate: "",
+                endDate: "",
+            }
+        )
+        setDetails(new_detail)
+        setExperienceElement([...experienceElement, <SectionSubForm title="experience" id={educationCount} details={details} setDetails={setDetails}></SectionSubForm> ]);
+        setExperienceCount(experienceCount => experienceCount + 1)
+    }
 
-    )
+    if (title === "education") {
+        return (
+            <>
+                {educationElem}
+                <div className='border pt-2 pb-2 rounded mt-3 bg-white' onClick={clickHandler}>+ Add new {word}</div>
+            </>
+
+        )
+    }
+    if (title === "experience") {
+        return (
+            <>
+                {experienceElement}
+                <div className='border pt-2 pb-2 rounded mt-3 bg-white' onClick={experienceHandler}>+ Add new {word}</div>
+            </>)
+    }
+    return <></>
 }
 
 export default SectionForm

@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import Result from './Components/Result';
 import Summary from './Components/Summary';
 import Education from './Components/Education'
+import Experience from './Components/Experience';
 let detail = {
   job_title: "",
   first_name: "",
@@ -17,7 +18,7 @@ let detail = {
   email: "",
   summary: "",
   education: [],
-  educationElement: {}
+  experience: []
 }
 let testing = {
   job_title: "Developer",
@@ -63,6 +64,7 @@ function App() {
           <Route path="personal_details" element={<PersonalDetails details={details} setdetails={setdetails} />} />
           <Route path="summary" element={<Summary details={details} setdetails={setdetails} />} />
           <Route path="education" element={<Education details={details} setdetails={setdetails} />} />
+          <Route path="experience" element={<Experience details={details} setdetails={setdetails} />} />
           <Route path="result" element={<Result details={details} />} />
         </Routes>
       </BrowserRouter>
