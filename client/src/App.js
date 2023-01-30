@@ -43,7 +43,6 @@ let testing = {
       school: "University of Sydney",
       startDate: "02 February 2018",
       endDate: "Present",
-
     },
     {
       degree_name: "bachelor of science",
@@ -68,7 +67,7 @@ function App() {
           <Route path="summary" element={<Summary details={details} setdetails={setdetails} />} />
           <Route path="education" element={<Education details={details} setdetails={setdetails} />} />
           <Route path="experience" element={<Experience details={details} setdetails={setdetails} />} />
-          <Route path="result" element={<Result details={testing} />} />
+          <Route path="result" element={<Result details={details} />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,10 +1,8 @@
 import React from 'react'
 import {
     Text,
-    Font,
     Page,
     View,
-    Image,
     Document,
     StyleSheet,
     PDFViewer
@@ -57,17 +55,29 @@ const Result = (props) => {
         }
     });
     let details = props.details
+    console.log(details)
     const education_details = props.details.education.map(detail => {
 
         return (<>
             <View style={{ marginBottom: "5px" }}>
                 <Text style={{ fontSize: "15px" }}>{detail.degree_name}, {detail.school}</Text>
-                <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}</Text>
+                <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}, {detail.city}</Text>
+                <Text style={{ fontSize: "10px", marginLeft: "10px", marginTop: "5px" }}>{detail.description}</Text>
             </View>
         </>)
 
     })
+    const experience_details = props.details.experience.map(detail => {
 
+        return (<>
+            <View style={{ marginBottom: "5px" }}>
+                <Text style={{ fontSize: "15px" }}>{detail.job_title}, {detail.employer}</Text>
+                <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}, {detail.city}</Text>
+                <Text style={{ fontSize: "10px", marginLeft: "10px", marginTop: "5px" }}>{detail.description}</Text>
+            </View>
+        </>)
+
+    })
     return (
         <>
 
@@ -76,7 +86,6 @@ const Result = (props) => {
                     <Page size="A4" style={styles.page}>
                         <View style={styles.header}>
                             <Text style={{ fontSize: "30px" }}>{details.first_name} {details.last_name}, {details.job_title}</Text>
-                            <Text></Text>
                             <Text>{details.email}</Text>
 
                         </View>
@@ -92,6 +101,7 @@ const Result = (props) => {
                                 </View>
                                 <View style={styles.section}>
                                     <Text style={styles.section_title}>Experience</Text>
+                                    {experience_details}
                                 </View>
                                 <View style={styles.section}>
                                     <Text style={styles.section_title}>Projects</Text>
