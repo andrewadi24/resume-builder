@@ -62,15 +62,15 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home></Home>}>
+          <Route path="/resumebuilder" element={<Home></Home>}>
           </Route>
-          <Route path="templates" element={<Builder />} />
-          <Route path="personal_details" element={<PersonalDetails details={details} setdetails={setdetails} />} />
-          <Route path="summary" element={<Summary details={details} setdetails={setdetails} />} />
-          <Route path="education" element={<Education details={details} setdetails={setdetails} />} />
-          <Route path="experience" element={<Experience details={details} setdetails={setdetails} />} />
-          <Route path="skills" element={<Skills details={details} setdetails={setdetails} />} />
-          <Route path="result" element={<Result details={details} />} />
+          <Route path="/templates" element={<Builder />} />
+          <Route path="/personal_details" element={<PersonalDetails details={details} setdetails={setdetails} />} />
+          <Route path="/summary" element={<Summary details={details} setdetails={setdetails} />} />
+          <Route path="/education" element={<Education details={details} setdetails={setdetails} />} />
+          <Route path="/experience" element={<Experience details={details} setdetails={setdetails} />} />
+          <Route path="/skills" element={<Skills details={details} setdetails={setdetails} />} />
+          <Route path="/result" element={<Result details={details} />} />
         </Routes>
       </BrowserRouter>
     </div>
