@@ -10,7 +10,7 @@ const Experience = (props) => {
             <SectionForm title="experience" details={details} setDetails={setDetails}></SectionForm>
             <div className='d-flex justify-content-between mt-2 mb-2'>
                 <Link to="/education"><div className='btn btn-danger btn-large'>Previous</div></Link>
-                <Link to="/result"><div className='btn btn-primary btn-large'> Next</div></Link>
+                <Link to="/skills"><div className='btn btn-primary btn-large'> Next</div></Link>
             </div>
         </div>
     )

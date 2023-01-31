@@ -55,9 +55,7 @@ const Result = (props) => {
         }
     });
     let details = props.details
-    console.log(details)
     const education_details = props.details.education.map(detail => {
-
         return (<>
             <View style={{ marginBottom: "5px" }}>
                 <Text style={{ fontSize: "15px" }}>{detail.degree_name}, {detail.school}</Text>
@@ -75,6 +73,13 @@ const Result = (props) => {
                 <Text style={{ fontSize: "10px" }}>{detail.startDate} - {detail.endDate}, {detail.city}</Text>
                 <Text style={{ fontSize: "10px", marginLeft: "10px", marginTop: "5px" }}>{detail.description}</Text>
             </View>
+        </>)
+
+    })
+    const skillsDetails = props.details.skills.map(detail => {
+
+        return (<>
+            <Text style={{ fontSize: "10px", marginLeft:"5px" }}>- {detail}</Text>
         </>)
 
     })
@@ -114,7 +119,10 @@ const Result = (props) => {
                                     <Text style={{ fontSize: "10px" }}>{details.phone}</Text>
                                     <Text style={{ fontSize: "10px" }}>{details.country}, {details.city}</Text>
                                 </View>
-                                <Text style={{ fontSize: "15px" }}>Skills</Text>
+                                <View>
+                                    <Text style={{ fontSize: "15px" }}>Skills</Text>
+                                    {skillsDetails}
+                                </View>
                                 <Text style={{ fontSize: "15px" }}>Languages</Text>
                             </View>
                         </View>

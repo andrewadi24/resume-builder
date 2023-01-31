@@ -54,13 +54,13 @@ const Form = (props) => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">First Name</label>
-                        <input type="text" value = {details.first_name}class="form-control" placeholder="Enter First Name" onChange={changeFirstName} />
+                        <input type="text" value = {details.first_name}className = "form-control" placeholder="Enter First Name" onChange={changeFirstName} />
                     </div>
                 </div>
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Last Name</label>
-                        <input type="text" value = {details.last_name}class="form-control" placeholder="Enter Last Name" onChange={changeLastName} />
+                        <input type="text" value = {details.last_name} className="form-control" placeholder="Enter Last Name" onChange={changeLastName} />
                     </div>
                 </div>
             </div>
@@ -68,13 +68,13 @@ const Form = (props) => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" value = {details.email}class="form-control"  placeholder="Enter email" onChange={changeEmail}/>
+                        <input type="email" value = {details.email}className="form-control"  placeholder="Enter email" onChange={changeEmail}/>
                     </div>
                 </div>
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Phone</label>
-                        <input type="text" class="form-control"  placeholder="Enter Phone" value = {details.phone}onChange={changePhone}/>
+                        <input type="text" className="form-control"  placeholder="Enter Phone" value = {details.phone}onChange={changePhone}/>
                     </div>
                 </div>
             </div>
@@ -83,13 +83,21 @@ const Form = (props) => {
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Country</label>
-                        <input type="text" class="form-control" value = {details.country}placeholder="Enter Country" onChange={changeCountry}/>
+                        <input type="text" className="form-control" value = {details.country}placeholder="Enter Country" onChange={changeCountry}/>
                     </div>
                 </div>
                 <div className='col-6'>
                     <div className="form-group">
                         <label for="exampleInputEmail1">City</label>
-                        <input type="text" class="form-control" placeholder="Enter City" value = {details.city} onChange={changeCity}/>
+                        <input type="text" className = "form-control" placeholder="Enter City" value = {details.city} onChange={changeCity}/>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className='col-12'>
+                    <div className="form-group">
+                        <label for="exampleInputEmail1">Country</label>
+                        <input type="text" className="form-control" value = {details.country} placeholder="Enter Country" onChange={changeCountry}/>
                     </div>
                 </div>
             </div>
